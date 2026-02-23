@@ -30,7 +30,7 @@ export default function Contact() {
 
           {/* CTA Button */}
           <a
-            href="mailto:hello@alastudios.com"
+            href="mailto:alastudiosproducciones@gmail.com"
             className="rounded-md bg-white px-8 py-3 text-[13px] font-medium text-black transition-colors duration-300 hover:bg-white/90"
           >
             {t.contact.cta[locale]}
@@ -39,10 +39,10 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="mt-4 flex flex-col gap-4 text-sm text-white/60 md:flex-row md:gap-12">
             <a
-              href="mailto:hello@alastudios.com"
+              href="mailto:alastudiosproducciones@gmail.com"
               className="transition-colors hover:text-white/90"
             >
-              hello@alastudios.com
+              alastudiosproducciones@gmail.com
             </a>
             <span className="hidden md:block">|</span>
             <a
