@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/lib/projects";
+import { useI18n } from "@/lib/i18n";
 
 export default function Showcase() {
+  const { locale, t } = useI18n();
+
   return (
     <section
       id="showcase"
@@ -12,11 +16,11 @@ export default function Showcase() {
         {/* Header */}
         <div className="mb-16 flex flex-col items-center gap-6 text-center md:mb-24">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-            Selected Work
+            {t.showcase.label[locale]}
           </span>
           <h2 className="max-w-[700px] font-[family-name:var(--font-manrope)] text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            Projects that speak for{" "}
-            <span className="text-[#09f]">themselves</span>.
+            {t.showcase.heading1[locale]}
+            <span className="text-[#09f]">{t.showcase.headingAccent[locale]}</span>.
           </h2>
         </div>
 
@@ -35,10 +39,10 @@ export default function Showcase() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6 md:p-10">
               <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-white/70">
-                Featured
+                {t.showcase.featured[locale]}
               </span>
               <h3 className="font-[family-name:var(--font-manrope)] text-2xl font-bold md:text-3xl">
-                Ala Studios Reel
+                {t.showcase.featuredTitle[locale]}
               </h3>
             </div>
           </div>
@@ -46,15 +50,15 @@ export default function Showcase() {
 
         {/* Project Grid */}
         <div className="grid gap-6 md:grid-cols-3">
-          {projects.map((project) => (
+          {t.projects.map((project) => (
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
               className="group relative overflow-hidden rounded-2xl"
             >
-              {project.youtubeId ? (
+              {project.slug === "som-la-resistencia" ? (
                 <Image
-                  src={`https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg`}
+                  src="https://img.youtube.com/vi/Yzk7oRw-2CE/maxresdefault.jpg"
                   alt={project.title}
                   width={600}
                   height={400}
@@ -62,7 +66,7 @@ export default function Showcase() {
                 />
               ) : (
                 <Image
-                  src={project.image}
+                  src="/assets/hero-image.avif"
                   alt={project.title}
                   width={600}
                   height={400}
@@ -72,7 +76,7 @@ export default function Showcase() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-100 md:opacity-0 md:transition-opacity md:duration-300 md:group-hover:opacity-100" />
               <div className="absolute bottom-0 left-0 p-6 opacity-100 md:translate-y-4 md:opacity-0 md:transition-all md:duration-300 md:group-hover:translate-y-0 md:group-hover:opacity-100">
                 <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.15em] text-white/70">
-                  {project.category}
+                  {project.category[locale]}
                 </span>
                 <h3 className="font-[family-name:var(--font-manrope)] text-lg font-bold">
                   {project.title}
@@ -88,7 +92,7 @@ export default function Showcase() {
             href="/work"
             className="rounded-md border border-white/15 px-8 py-3 text-[13px] font-medium text-white transition-colors duration-300 hover:bg-white/5"
           >
-            View All Projects
+            {t.showcase.viewAll[locale]}
           </Link>
         </div>
       </div>

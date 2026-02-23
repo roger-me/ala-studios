@@ -1,6 +1,18 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
 
 export default function About() {
+  const { locale, t } = useI18n();
+
+  const stats = [
+    { value: "50+", label: t.about.stats.projects[locale] },
+    { value: "30+", label: t.about.stats.clients[locale] },
+    { value: "5+", label: t.about.stats.years[locale] },
+    { value: "100%", label: t.about.stats.passion[locale] },
+  ];
+
   return (
     <section
       id="about"
@@ -10,21 +22,19 @@ export default function About() {
         <div className="flex flex-col items-center gap-12 text-center md:gap-20">
           {/* Section Label */}
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-            About Us
+            {t.about.label[locale]}
           </span>
 
           {/* Main Heading */}
           <h2 className="max-w-[930px] font-[family-name:var(--font-manrope)] text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            A creative studio built on the belief that{" "}
-            <span className="text-[#09f]">great visuals</span> drive real
-            connection.
+            {t.about.heading1[locale]}
+            <span className="text-[#09f]">{t.about.headingAccent[locale]}</span>
+            {t.about.heading2[locale]}
           </h2>
 
           {/* Description */}
           <p className="max-w-[680px] text-base leading-relaxed text-white/80 md:text-lg">
-            We combine cinematic craft with strategic thinking to produce video
-            content that resonates. From concept to final cut, every frame is
-            designed to tell your story with impact.
+            {t.about.description[locale]}
           </p>
 
           {/* Image */}
@@ -41,12 +51,7 @@ export default function About() {
 
           {/* Stats */}
           <div className="grid w-full max-w-[800px] grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
-            {[
-              { value: "50+", label: "Projects" },
-              { value: "30+", label: "Clients" },
-              { value: "5+", label: "Years" },
-              { value: "100%", label: "Passion" },
-            ].map((stat) => (
+            {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col gap-2">
                 <span className="font-[family-name:var(--font-manrope)] text-3xl font-bold text-white md:text-4xl">
                   {stat.value}

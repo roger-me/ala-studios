@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import Image from "next/image";
-
-const navLinks = [
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Work", href: "/work" },
-  { label: "Process", href: "/#process" },
-  { label: "Contact", href: "/#contact" },
-];
+import { useI18n } from "@/lib/i18n";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { locale, setLocale, t } = useI18n();
+
+  const navLinks = [
+    { label: t.nav.about[locale], href: "/#about" },
+    { label: t.nav.services[locale], href: "/#services" },
+    { label: t.nav.work[locale], href: "/work" },
+    { label: t.nav.process[locale], href: "/#process" },
+    { label: t.nav.contact[locale], href: "/#contact" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
@@ -22,8 +24,8 @@ export default function Navbar() {
           <Image
             src="/assets/logo.avif"
             alt="Ala Studios"
-            width={32}
-            height={32}
+            width={200}
+            height={70}
             className="h-8 w-auto"
           />
         </a>
@@ -42,13 +44,21 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Button */}
-        <a
-          href="/#contact"
-          className="hidden rounded-md bg-white px-5 py-2 text-[13px] font-medium text-black transition-colors duration-300 hover:bg-white/90 md:block"
-        >
-          Get in Touch
-        </a>
+        {/* Right side: Lang toggle + CTA */}
+        <div className="hidden items-center gap-4 md:flex">
+          <button
+            onClick={() => setLocale(locale === "es" ? "en" : "es")}
+            className="rounded-md border border-white/10 px-5 py-2 text-[13px] font-medium uppercase tracking-wider text-white/60 transition-colors duration-300 hover:border-white/20 hover:text-white"
+          >
+            {locale === "es" ? "EN" : "ES"}
+          </button>
+          <a
+            href="/#contact"
+            className="rounded-md bg-white px-5 py-2 text-[13px] font-medium text-black transition-colors duration-300 hover:bg-white/90"
+          >
+            {t.nav.cta[locale]}
+          </a>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -84,12 +94,23 @@ export default function Navbar() {
               </li>
             ))}
             <li>
+              <button
+                onClick={() => {
+                  setLocale(locale === "es" ? "en" : "es");
+                  setMenuOpen(false);
+                }}
+                className="rounded-md border border-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-white/60"
+              >
+                {locale === "es" ? "English" : "Espanol"}
+              </button>
+            </li>
+            <li>
               <a
                 href="/#contact"
                 onClick={() => setMenuOpen(false)}
                 className="rounded-md bg-white px-6 py-2.5 text-sm font-medium text-black"
               >
-                Get in Touch
+                {t.nav.cta[locale]}
               </a>
             </li>
           </ul>
