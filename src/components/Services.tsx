@@ -47,7 +47,7 @@ export default function Services() {
         {/* Header */}
         <div className="mb-16 flex flex-col gap-6 md:mb-24 md:flex-row md:items-end md:justify-between">
           <div className="flex flex-col gap-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
               What We Do
             </span>
             <h2 className="max-w-[600px] font-[family-name:var(--font-manrope)] text-3xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -55,7 +55,7 @@ export default function Services() {
               <span className="text-[#09f]">impact</span>.
             </h2>
           </div>
-          <p className="max-w-[420px] text-base leading-relaxed text-white/60">
+          <p className="max-w-[420px] text-base leading-relaxed text-white/80">
             Every project gets our full creative energy. We tailor our approach
             to match your goals and deliver results that stand out.
           </p>
@@ -68,13 +68,13 @@ export default function Services() {
               key={service.title}
               className="group flex flex-col gap-6 rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.04] md:p-10"
             >
-              <span className="font-[family-name:var(--font-manrope)] text-3xl font-bold text-white/20 transition-colors duration-300 group-hover:text-[#09f]/40">
+              <span className="font-[family-name:var(--font-manrope)] text-3xl font-bold text-white/40 transition-colors duration-300 group-hover:text-[#09f]/60">
                 {service.icon}
               </span>
               <h3 className="font-[family-name:var(--font-manrope)] text-xl font-bold tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-sm leading-relaxed text-white/50">
+              <p className="text-sm leading-relaxed text-white/70">
                 {service.description}
               </p>
             </div>

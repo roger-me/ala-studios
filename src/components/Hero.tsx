@@ -25,7 +25,7 @@ export default function Hero() {
             <span className="text-[#09f]">move</span> people.
           </h1>
 
-          <p className="animate-fade-in-up animate-delay-1 max-w-[480px] text-[15px] leading-relaxed text-white/60">
+          <p className="animate-fade-in-up animate-delay-1 max-w-[480px] text-[15px] leading-relaxed text-white/80">
             Ala Studios is a creative video production studio specializing in
             cinematic storytelling, brand films, and visual content that connects
             with audiences.

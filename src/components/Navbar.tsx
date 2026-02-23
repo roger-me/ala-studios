@@ -4,11 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#showcase" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/work" },
+  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
       <nav className="mx-auto flex max-w-[1450px] items-center justify-between px-10 py-5">
         {/* Logo */}
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
           <Image
             src="/assets/logo.avif"
             alt="Ala Studios"
@@ -34,7 +34,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[13px] font-medium text-white/50 transition-colors duration-300 hover:text-white"
+                className="text-[13px] font-medium text-white/70 transition-colors duration-300 hover:text-white"
               >
                 {link.label}
               </a>
@@ -44,7 +44,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <a
-          href="#contact"
+          href="/#contact"
           className="hidden rounded-md bg-white px-5 py-2 text-[13px] font-medium text-black transition-colors duration-300 hover:bg-white/90 md:block"
         >
           Get in Touch
@@ -77,7 +77,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-base font-medium text-white/50 transition-colors hover:text-white"
+                  className="text-base font-medium text-white/70 transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -85,7 +85,7 @@ export default function Navbar() {
             ))}
             <li>
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMenuOpen(false)}
                 className="rounded-md bg-white px-6 py-2.5 text-sm font-medium text-black"
               >

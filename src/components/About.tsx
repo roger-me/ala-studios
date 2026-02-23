@@ -9,7 +9,7 @@ export default function About() {
       <div className="mx-auto max-w-[1450px] px-10">
         <div className="flex flex-col items-center gap-12 text-center md:gap-20">
           {/* Section Label */}
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
             About Us
           </span>
 
@@ -21,7 +21,7 @@ export default function About() {
           </h2>
 
           {/* Description */}
-          <p className="max-w-[680px] text-base leading-relaxed text-white/60 md:text-lg">
+          <p className="max-w-[680px] text-base leading-relaxed text-white/80 md:text-lg">
             We combine cinematic craft with strategic thinking to produce video
             content that resonates. From concept to final cut, every frame is
             designed to tell your story with impact.
@@ -51,7 +51,7 @@ export default function About() {
                 <span className="font-[family-name:var(--font-manrope)] text-3xl font-bold text-white md:text-4xl">
                   {stat.value}
                 </span>
-                <span className="text-sm text-white/40">{stat.label}</span>
+                <span className="text-sm text-white/60">{stat.label}</span>
               </div>
             ))}
           </div>

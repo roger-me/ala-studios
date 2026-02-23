@@ -34,7 +34,7 @@ export default function Process() {
       <div className="mx-auto max-w-[1450px] px-10">
         {/* Header */}
         <div className="mb-16 flex flex-col items-center gap-6 text-center md:mb-24">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
             How We Work
           </span>
           <h2 className="max-w-[600px] font-[family-name:var(--font-manrope)] text-3xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -51,7 +51,7 @@ export default function Process() {
               className="group relative flex flex-col gap-6 border-l border-white/10 p-8 transition-all duration-300 hover:bg-white/[0.02] md:p-10"
             >
               {/* Number */}
-              <span className="font-[family-name:var(--font-manrope)] text-5xl font-bold text-white/15 transition-colors duration-300 group-hover:text-[#09f]/30">
+              <span className="font-[family-name:var(--font-manrope)] text-5xl font-bold text-white/30 transition-colors duration-300 group-hover:text-[#09f]/50">
                 {step.number}
               </span>
 
@@ -60,7 +60,7 @@ export default function Process() {
                 <h3 className="font-[family-name:var(--font-manrope)] text-xl font-bold tracking-tight">
                   {step.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-white/50">
+                <p className="text-sm leading-relaxed text-white/70">
                   {step.description}
                 </p>
               </div>

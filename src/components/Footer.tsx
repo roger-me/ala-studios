@@ -20,32 +20,32 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex items-center gap-8 text-sm text-white/40">
-            <a href="#about" className="transition-colors hover:text-white/70">
+          <div className="flex items-center gap-8 text-sm text-white/60">
+            <a href="/#about" className="transition-colors hover:text-white/80">
               About
             </a>
             <a
-              href="#services"
-              className="transition-colors hover:text-white/70"
+              href="/#services"
+              className="transition-colors hover:text-white/80"
             >
               Services
             </a>
             <a
-              href="#showcase"
-              className="transition-colors hover:text-white/70"
+              href="/work"
+              className="transition-colors hover:text-white/80"
             >
               Work
             </a>
             <a
-              href="#contact"
-              className="transition-colors hover:text-white/70"
+              href="/#contact"
+              className="transition-colors hover:text-white/80"
             >
               Contact
             </a>
           </div>
 
           {/* Copyright */}
-          <p className="text-xs text-white/30">
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} Ala Studios. All rights reserved.
           </p>
         </div>

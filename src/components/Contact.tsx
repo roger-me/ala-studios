@@ -7,7 +7,7 @@ export default function Contact() {
       <div className="mx-auto max-w-[1450px] px-10">
         <div className="flex flex-col items-center gap-8 text-center md:gap-10">
           {/* Label */}
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
             Get in Touch
           </span>
 
@@ -18,7 +18,7 @@ export default function Contact() {
           </h2>
 
           {/* Description */}
-          <p className="max-w-[560px] text-[15px] leading-relaxed text-white/60">
+          <p className="max-w-[560px] text-[15px] leading-relaxed text-white/80">
             Whether you have a clear vision or just an idea, we would love to
             hear from you. Let us bring your story to life.
           </p>
@@ -40,10 +40,10 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="mt-4 flex flex-col gap-4 text-sm text-white/40 md:flex-row md:gap-12">
+          <div className="mt-4 flex flex-col gap-4 text-sm text-white/60 md:flex-row md:gap-12">
             <a
               href="mailto:hello@alastudios.com"
-              className="transition-colors hover:text-white/70"
+              className="transition-colors hover:text-white/90"
             >
               hello@alastudios.com
             </a>
@@ -52,7 +52,7 @@ export default function Contact() {
               href="https://instagram.com/alastudios"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-white/70"
+              className="transition-colors hover:text-white/90"
             >
               @alastudios
             </a>
